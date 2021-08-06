@@ -8,3 +8,12 @@ const firebaseConfig = {
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
+
+// Initialize Cloud Firestore through Firebase
+firebase.initializeApp({
+  apiKey: 'AIzaSyDZsobzbWYCkV_lDocfccutJLJsZXdNNtg',
+  authDomain: 'sap006-socialnetwork.firebaseapp.com',
+  projectId: 'sap006-socialnetwork',
+});
+
+export const db = firebase.firestore();

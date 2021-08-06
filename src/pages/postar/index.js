@@ -1,3 +1,5 @@
+import { db } from '../../firebaseInit.js';
+
 export const postar = () => {
   const rootElement = document.createElement('div');
   rootElement.innerHTML = ` 
@@ -19,3 +21,15 @@ export const postar = () => {
   `;
   return rootElement;
 };
+
+db.collection('posts').add({
+  first: "Ada", // inputs do post, como nome do lugar
+  last: "Lovelace", // se é restaurante, mercado ou receita
+  born: 1815, // hashtags
+})
+.then((docRef) => {
+  console.log("Document written with ID: ", docRef.id);
+})
+.catch((error) => {
+  console.error("Error adding document: ", error);
+});
