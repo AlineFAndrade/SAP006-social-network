@@ -98,13 +98,19 @@
     margin: 30% 3% 1% 80%;
     width: 60px;
   }
-  /* .botoes {
+  .botoes {
+    display: flex;
+    flex-direction: column;
     justify-content: space-between;
     width: 100%;
-  } */
-  .tipo{
-    align-self: flex-end;
   }
+  .tipo{
+    display: flex;
+    align-self: flex-end;
+    width: 20%;
+    right: 10%;
+  }
+
 
 }
 
@@ -265,11 +271,11 @@
 }
 
 .tipo {
-  font-size: 18px;
+  /* font-size: 18px; */
   color: #ffffff;
   background-color: var(--green-color);
   text-align: center;
   width: 25%;
-  right: 10%;
+  /* right: 10%; */
   cursor: pointer;
 }

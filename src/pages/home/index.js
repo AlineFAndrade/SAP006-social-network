@@ -1,4 +1,4 @@
-/* eslint-disable eol-last */
+/* eslint-disable no-param-reassign */
 import { outLogin } from '../../services/firebaseAuth.js';
 import { route } from '../../routes/navigator.js';
 import {
@@ -83,13 +83,18 @@ export const home = () => {
           <p class="hashs" contenteditable="false" data-hashs="${doc.id}">${doc.data().hashTags}</p>
         
           <div class='botoes'> 
+
           <p class="tipo" contenteditable="false" data-tag="${doc.id}"> ${doc.data().tipo} </p>
-          <button type="button" class="like"> <img id="like" data-like="${doc.id}" class="likeImg"  src="./img/coracao.svg"></button>
+          <button type="button" class="like"> <img id="like" data-like="${doc.id}" class="likeImg" src="./img/coracao.svg"></button>
           <p class="beforLike" id="numberLikes" data-numLike="${doc.id}">${doc.data().curtidas.length || 0}</p>
           <span class="price" contenteditable="false" id="price" data-preco="${doc.id}">${doc.data().preco}</span>
          
           </div>
-      
+          <div class="coments" id="coments">
+            <textarea class='addComent' data-item='add-comment' placeholder='Escreva um comentário!'></textarea>
+            <button class="more" id="more">ver mais</button>
+            <button class ='goComent' id='goComent' img class='addCom' src='./img/addCom.svg' data-item='comment'/>enviar comentário</button>
+          </div>
             <hr> `;
 
       timeline.insertBefore(div, timeline.childNodes[0]);
