@@ -1,6 +1,6 @@
 /* eslint-disable arrow-body-style */
 import { route } from '../routes/navigator.js';
-import { handleError, errorGoogle, errorPassword } from './error.js';
+import { handleError, errorGoogle } from './error.js';
 
 firebase.auth().useDeviceLanguage();
 
@@ -19,10 +19,6 @@ export const atualizarUsuario = (nome, photoProfile) => firebase.auth().currentU
 export const SignIn = (usuario, passwordLogin) => {
   return firebase.auth().signInWithEmailAndPassword(usuario, passwordLogin);
 };
-
-// export const stayLogged = () => {
-//   return firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION);
-// };
 
 // ** SIGN IN GOOGLE //
 export const googleLogin = () => {
