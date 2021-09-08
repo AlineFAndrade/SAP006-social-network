@@ -66,6 +66,10 @@ input[type='file'] {
 .upload{
   margin: 4% 0 0% 5%;
 }
+.register {
+  margin-top: 5%;
+  line-height: 2;
+}
 .upload:hover, .register:hover{
   color: rgb(119, 117, 117);
   cursor: pointer;
@@ -91,10 +95,6 @@ input[type='file'] {
 .eyeGroupPass {
   width: 100%;
   position: relative;
-}
-.register {
-  margin-top: 5%;
-  line-height: 2;
 }
 .buttonLogin {
   background-color: #fff;
