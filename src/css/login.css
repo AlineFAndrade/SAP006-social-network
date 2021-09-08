@@ -35,6 +35,7 @@
 .eye{
   position: absolute;
   right: 30%;
+  cursor: pointer;
 }
 .eye img {
   width: 40%;
@@ -46,9 +47,9 @@
   border: 1px solid #9b9b9bde;
   box-sizing: border-box;
   box-shadow: 0px 4px 4px rgba(20, 20, 20, 0.37);
-  margin-top: 25px;
   border-radius: 7px;
   cursor: pointer;
+  font-family: "Russo One", sans-serif;
 }
 .forgetPass {
   background: transparent;
@@ -89,7 +90,7 @@
   color: rgb(0, 0, 0);
 }
 .cadastro:hover,
-.forgetPass:hover {
+.forgetPass:hover, .entrar:hover {
   cursor: pointer;
   color: rgb(119, 117, 117);
 }

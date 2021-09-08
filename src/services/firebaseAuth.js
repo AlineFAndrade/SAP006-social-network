@@ -20,12 +20,9 @@ export const SignIn = (usuario, passwordLogin) => {
   return firebase.auth().signInWithEmailAndPassword(usuario, passwordLogin);
 };
 
-// export const stayLogged = () => {
-//   return firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION);
-// };
-
 // ** SIGN IN GOOGLE //
-export const googleLogin = () => {  const provider = new firebase.auth.GoogleAuthProvider();
+export const googleLogin = () => {
+  const provider = new firebase.auth.GoogleAuthProvider();
   return firebase
     .auth()
     .signInWithPopup(provider).then((result) => {
@@ -53,9 +50,3 @@ export const resetPass = (email) => {
     })
     .catch(handleError);
 };
-
-// firebase.auth().onAuthStateChanged((user) => {
-//   if (!user) {
-//     route('/login');
-//   }
-// });

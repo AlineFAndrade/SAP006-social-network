@@ -1,104 +1,128 @@
-.title,
-.box,
-.forms,
-.enter {
-  margin: auto;
+.box{
+  margin-inline: 10%;
+  margin-bottom: 2%;
+  display: flex;
+  flex-flow: column nowrap;
+}
+.forms {
   border: none;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: center;
 }
-.title {
-  width: 30%;
-  padding: 5% 0 3% 0;
+.titleCads {
+  padding: 3%;
 }
-.forms {
-  width: 50%;
+.titleCads img {
+  width: 90%;
+}
+.nameUser,
+.emailUser,
+.passwordRegister,
+.confPass {
+  width: 60%;
+  text-align: center;
+  border: 1px solid #51fa02;
+  box-shadow: 0px 4px 4px 0px rgb(73 73 73 / 25%) inset;
+  padding: 2%;
+  font-size: 75%;
 }
 
-#nameUser,
-#emailUser,
-#addImgProfile,
-#passwordRegister,
-#confPass {
+input[type='file'] {
+  margin: 0;
+}
+.inputPhoto{
   text-align: center;
-  padding: 3%;
-  margin: 1%;
+  margin: auto; 
+  display: flex;
+  height: fit-content;
+  flex-direction: column;
+  width: 62%;
+  align-items: center;
+}
+
+.addImgReg {
+  width: 100%;
+  padding: 3% 2%;
+  height: 10%;
+  margin: 0 auto;
+  background-color: white;
+  text-align: center;
   border: 1px solid #51fa02;
-  box-shadow: 0px 4px 4px 0px rgba(73, 73, 73, 0.25) inset;
+  box-shadow: 0px 4px 4px 0px rgb(73 73 73 / 25%) inset;
   font-size: 100%;
 }
-.inputPhoto {
-  /* width: 50%; */
-  background-color: initial;
-  padding: initial;
-  border: initial;
-  cursor: unset;
-  position: relative;
-}
-/* #loadImg {
-  width: 25%;
-  height: 25%;
-  border: 1px solid #51fa02;
-} */
-.register {
-  font-family: "Russo One", sans-serif;
-  font-size: 20px;
-  background: #97cf6e;
+.upload, .register{
+  font-family: 'Russo One', sans-serif;
+  font-size: 100%;
+  padding: 1%;
+  border: none;
   box-shadow: 0px 4px 4px rgba(73, 73, 73, 0.25);
-  border: none;
-  border-radius: 10px;
-  margin: 3% auto;
-  padding: 2% 2%;
+  background: #97cf6e;
   text-align: center;
-  width: 40%;
+  border-radius: 10px;
+  width: max-content;
 }
-#buttonLogin {
-  background-color: #fff;
-  border: none;
-  box-shadow: none;
-  width: 30%;
-  margin: 4% auto;
+.upload{
+  margin: 4% 0 0% 5%;
 }
-#buttonLogin img {
-  width: 100%;
+.register {
+  margin-top: 5%;
+  line-height: 2;
+}
+.upload:hover, .register:hover{
+  color: rgb(119, 117, 117);
+  cursor: pointer;
 }
 .inputPass,
 .inputConf {
   display: flex;
   align-items: center;
- }
- #passwordRegister, #confPass {
-   width: 80%;
- }
- #seePass, #seeConfPass {
-   padding-inline: 1%;
-   width: 7%;
-   cursor: pointer;
-  }
-@media (max-width: 600px){
+  flex-flow: column nowrap;
+  margin-top: 2%;
+  width: 100%;
+}
 
-  .title {
-    width: 50%;
-    padding: 8% 0 8% 0;
+.seePass, .seeConfPass {
+  cursor: pointer;
+  position: absolute;
+  top: 25%;
+  right: 20%;
+  width: 5%;
+  width: 2%;
+}
+
+.eyeGroupPass {
+  width: 100%;
+  position: relative;
+}
+.buttonLogin {
+  background-color: #fff;
+  border: none;
+  box-shadow: none;
+  width: 80%;
+  margin: 4% auto;
+  padding: 2%;
+}
+.buttonLogin img {
+  width: 30%;
+}
+.buttonLogin img:hover{
+  background-color: #97cf6e;
+  border-radius: 10px;
+}
+@media (max-width: 600px) {
+  .upload{
+    margin: 6% 0 0% 5%;
+    padding: 4%;
+    width: max-content;
+  }
+  .register{
+  width: 25%;
+  }
+  .buttonLogin img{
+    width: 65%;
+    margin-top: 15%;
   }
 
-  #nameUser,
-  #emailUser,
-  #passwordRegister,
-  #confPass {
-    padding: 5%;
-    font-size: 60%;
-  }
-  .register {
-    padding: 5%;
-    margin: 5% auto;
-    font-size: 80%;
-    width: 50%;
-  }
-  #buttonLogin {
-    margin: 5% auto;
-    width: 30%
-  }
-  }
- 
+}
