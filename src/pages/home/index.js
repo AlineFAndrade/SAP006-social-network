@@ -9,35 +9,35 @@ import { modal } from './modal.js';
 export const home = () => {
   const rootElement = document.createElement('div');
   rootElement.innerHTML = ` 
-  <nav class="menu">
-   <button class="links" href=""><img src="./img/lupa.svg"> Buscar</button>
-   <button class="links" id="goPost"><img src="./img/tomato.svg"> Postar</button>
-   <button class="links" id="btnLogout"> Sair</button>
-  </nav>
-  <div class="containerHome">
-  <header>
-  <img class="logoHome" src="./img/govegGreen.png">
-  <div class="lines">
-  <hr>
-  </div>
-    <div class="filters">
-    <button id="receitas" class="receitas"> Receitas</button>
-    <button id="restaurantes" class="restaurantes" type="submit"> Restaurantes</button>
-    <button id="mercados" class="mercados"> Mercados</button>
-    </div>
-    
-    <div class="lines">
-    <hr>
-    </div>
+    <nav class="menu">
+    <button class="links" href=""><img src="./img/lupa.svg"> Buscar</button>
+    <button class="links" id="goPost"><img src="./img/tomato.svg"> Postar</button>
+    <button class="links" id="btnLogout"> Sair</button>
+    </nav>
+    <div class="containerHome">
+    <header>
+      <img class="logoHome" src="./img/govegGreen.png">
+      <div class="lines">
+        <hr>
+      </div>
+      <div class="filters">
+        <button id="receitas" class="receitas"> Receitas </button>
+        <button id="restaurantes" class="restaurantes" type="submit"> Restaurantes </button>
+        <button id="mercados" class="mercados"> Mercados </button>
+      </div>
+        
+      <div class="lines">
+        <hr>
+      </div>
+      
+    </header>
+    <main>
+      <div class="publish" id="timeline" data-post>
+      </div>
   
-  </header>
-  <main>
-    <div class="publish" id="timeline" data-post>
-    </div>
- 
-  </main>
-</div>
-`;
+    </main>
+  </div>
+  `;
 
   const btnLogout = rootElement.querySelector('#btnLogout');
   const btnGoPost = rootElement.querySelector('#goPost');
@@ -48,6 +48,14 @@ export const home = () => {
   });
 
   btnGoPost.addEventListener('click', () => route('/posts'));
+
+  // const btnRecipe = rootElement.querySelector('#receitas');
+  // console.log(btnRecipe);
+  // btnRecipe.addEventListener('click', () => {
+  //   const recipePosts = data().tipo === 'receita';
+  //   console.log(recipePosts);
+  //   return getPosts(recipePosts);
+  // });
   // carregar posts na tela
   getPosts().then((collectionContent) => {
     collectionContent.forEach((doc) => {

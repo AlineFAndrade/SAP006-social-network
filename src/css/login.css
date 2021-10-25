@@ -2,6 +2,12 @@
   background: #97cf6e;
   margin: 0;
   padding: 0;
+   /* inicio alteração/inclusão */
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* fim alteração/inclusão */
 }
 .container {
   background: #97cf6e;
@@ -31,6 +37,7 @@
   border: 1px solid #ffffffde;
   color: rgb(0, 0, 0);
   box-shadow: 0px -3px 1px #a09f9f5e;
+  height: 30px;
 }
 .eye{
   position: absolute;
@@ -41,7 +48,8 @@
   width: 40%;
 }
 .entrar {
-  width: 30%;
+  width: 290px;
+  height: 40px;
   padding: 9px;
   font-size: 80%;
   border: 1px solid #9b9b9bde;
@@ -59,9 +67,10 @@
 }
 
 .google-login {
-  width: 60%;
+  width: 40%;
+  max-width: 170px;
   padding: 7px;
-  font-size: 100%;
+  font-size: 70%;
   color: rgb(119, 117, 117);
   border: 1px solid #9b9b9bde;
   box-sizing: border-box;
@@ -94,12 +103,18 @@
   cursor: pointer;
   color: rgb(119, 117, 117);
 }
-
-@media (max-width: 500px) {
+/* inicio alteração/inclusão */
+@media (max-width: 768px) {
+  .container{
+    width: 80%;
+  }
   .cadastro {
     font-size: 100%;
   }
 
+  .eye{
+    right: 20%;
+  }
   .google-login {
     width: 100%;
     margin: 8% auto;
@@ -110,4 +125,9 @@
     padding: 6px;
     font-size: 100%;
   }
+
+  .forgetPass{
+    margin-top: 5%;
+  }
 }
+/* fim alteração/inclusão */

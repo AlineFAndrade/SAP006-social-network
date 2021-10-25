@@ -25,9 +25,9 @@ export const postar = () => {
       <button class="tag" id="rest">Restaurantes</button>
      </div>
      <div class="titleType">
-     <p id="type">selecione uma tag acima</p>
-     <input type="text" id="typePost" name="typePost" placeholder="Local"/>
-     <p id="errorType" class="error"></p>
+      <p id="type">selecione uma tag acima</p>
+      <input type="text" id="typePost" name="typePost" placeholder="Local"/>
+      <p id="errorType" class="error"></p>
      </div>
      <input type:"text" id="hashtags" class="hashtags" name="hashtags" placeholder="#pizza #sp #vegano"/>
      <p id="errorHashtags" class="error"></p>

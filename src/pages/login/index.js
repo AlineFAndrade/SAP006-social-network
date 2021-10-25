@@ -6,35 +6,36 @@ export const login = () => {
   const rootElement = document.createElement('div');
   rootElement.setAttribute('class', 'page');
   rootElement.innerHTML = `<div class="container">
-  <header>
-  <img class="logo" src="img/logo.png" alt="GO VEG - logo">
-  </header>
-  <main>
-      <div class="label-float">
-        <input class="login" name="usuario" type="text" id="usuario" placeholder="E-mail">
-      </div>
-      <div class="inputPass" id="inputPass">
-      <input class="password" type="password" id="senha" placeholder="Senha"/>
-      <span class="eye"><img id="eye" src="./img/eyesOpen.svg"></span> 
-    </div>
-      <p id="textErrorEmailPassword"></p>
-      
-      <div class="justify-enter">
-        <button type="button" name="botao" class="entrar" id="entrar">ENTRAR</button>
-      </div>
-      <button class="forgetPass" id="forgetPass"> Esqueci a senha! </button>
-      <div class="justify-google">
-        <button type="button" name="botao" class="google-login" id="google-login"> <img src="./img/google.png" class="google-logo" />Sign in
-          with Google</button>
-      </div>
-      <div class="line">
-        <hr>
-      </div>
-      <div class="justify-register">
-        <a class="cadastro" id="cadastro" href="#">Cadastre-se</a>
-      </div> 
+    <header>
+      <img class="logo" src="img/logo.png" alt="GO VEG - logo">
+    </header>
     <main>
-    </div>`;
+      <div class="inputs">
+        <div class="label-float">
+          <input class="login" name="usuario" type="text" id="usuario" placeholder="E-mail">
+        </div>
+        <div class="inputPass" id="inputPass">
+          <input class="password" type="password" id="senha" placeholder="Senha"/>
+          <span class="eye"><img id="eye" src="./img/eyesOpen.svg"></span> 
+        </div>
+        <p id="textErrorEmailPassword"></p>
+      </div>
+        <div class="justify-enter">
+          <button type="button" name="botao" class="entrar" id="entrar">ENTRAR</button>
+        </div>
+        <button class="forgetPass" id="forgetPass"> Esqueci a senha! </button>
+        <div class="justify-google">
+          <button type="button" name="botao" class="google-login" id="google-login"> 
+          <img src="./img/google.png" class="google-logo" />Sign in with Google</button>
+        </div>
+        <div class="line">
+          <hr>
+        </div>
+        <div class="justify-register">
+          <a class="cadastro" id="cadastro" href="#">Cadastre-se</a>
+        </div> 
+      <main>
+  </div>`;
 
   const botaoCadastro = rootElement.querySelector('#cadastro');
   const botaoGoogle = rootElement.querySelector('#google-login');
