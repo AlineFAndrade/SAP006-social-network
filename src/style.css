@@ -45,7 +45,7 @@ input::placeholder {
   margin: 2% 5% 5% -1.5%;
   padding: 2%;
   border-radius: 15px;
-  box-shadow: rgb(0 0 0 / 25%) 0px 30px 35px, rgb(0 0 0 / 12%) 0px -12px 30px, rgb(0 0 0 / 12%) 0px 4px 6px, rgb(0 0 0 / 17%) 0px 12px 13px, rgb(0 0 0 / 9%) 0px -3px 5px;
+  box-shadow: rgb(0 0 0 / 1%) 0px 25px 35px, rgb(0 0 0 / 12%) 0px -12px 30px, rgb(0 0 0 / 1%) 0px 4px 9px, rgb(0 0 0 / 17%) 0px 12px 13px, rgb(0 0 0 / 1%) 0px -3px 4px;
   border: none;
   font-family: "Russo One", sans-serif;
 }
@@ -59,6 +59,18 @@ input::placeholder {
 }
 #btnLogout{
   padding: 10px;
+}
+
+.lupa{
+  position: absolute;
+  right: 60%;
+  padding: 5%;
+  width: 12%;
+}
+
+#feed-post-search{
+  text-align: end;
+  padding: 6px;
 }
 /* @media 
 .links a img{

@@ -1,3 +1,4 @@
+/* eslint-disable no-plusplus */
 import { outLogin } from '../../services/firebaseAuth.js';
 import { route } from '../../routes/navigator.js';
 import {
@@ -5,12 +6,11 @@ import {
 } from '../../services/firebaseData.js';
 import { modal } from './modal.js';
 
-// <img src=${doc.data().image class='imgPost'>
 export const home = () => {
   const rootElement = document.createElement('div');
   rootElement.innerHTML = ` 
   <nav class="menu">
-   <button class="links" href=""><img src="./img/lupa.svg"> Buscar</button>
+   <input class="links" id="feed-post-search" placeholder="Buscar"> <img class="lupa" src="./img/lupa.svg"></input>
    <button class="links" id="goPost"><img src="./img/tomato.svg"> Postar</button>
    <button class="links" id="btnLogout"> Sair</button>
   </nav>
@@ -90,6 +90,26 @@ export const home = () => {
 
       timeline.insertBefore(div, timeline.childNodes[0]);
     });
+
+    function filterPost() {
+      const filterValue = rootElement.querySelector('#feed-post-search').value.toUpperCase();
+      const printedPosts = rootElement.querySelector('#timeline');
+      const postsContents = printedPosts.getElementsByClassName('title');
+      const getPost = document.getElementsByClassName('allPosts');
+      for (let i = 0; i < postsContents.length; i++) {
+        const filteredPost = postsContents[i];
+        if (filteredPost.innerHTML.toUpperCase().indexOf(filterValue) > -1) {
+          postsContents[i].style.display = '';
+          getPost[i].style.display = '';
+        } else {
+          postsContents[i].style.display = 'none';
+          getPost[i].style.display = 'none';
+        }
+      }
+    }
+
+    const searchInput = rootElement.querySelector('#feed-post-search');
+    searchInput.addEventListener('keyup', filterPost);
 
     const dataPost = rootElement.querySelector('[data-post]');
     dataPost.addEventListener('click', (e) => {

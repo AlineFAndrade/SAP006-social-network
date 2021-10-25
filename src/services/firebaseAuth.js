@@ -50,9 +50,3 @@ export const resetPass = (email) => {
     })
     .catch(handleError);
 };
-
-// firebase.auth().onAuthStateChanged((user) => {
-//   if (!user) {
-//     route('/login');
-//   }
-// });
