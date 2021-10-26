@@ -30,6 +30,11 @@
 
 input[type='file'] {
   margin: 0;
+  /* inicio alteração/inclusão */
+  padding-top: 25px;
+  padding-bottom: 25px;
+  /* fim alteração/inclusão */
+  font-size: 70%;
 }
 .inputPhoto{
   text-align: center;
@@ -64,11 +69,21 @@ input[type='file'] {
   width: max-content;
 }
 .upload{
-  margin: 4% 0 0% 5%;
+  /* inicio alteração/inclusão */
+  margin: 4% 0;
+  width: 290px;
+  height: 40px;
+  /* fim alteração/inclusão */
 }
 .register {
   margin-top: 5%;
-  line-height: 2;
+  /* inicio alteração/inclusão */
+  width: 290px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+   /* fim alteração/inclusão */
 }
 .upload:hover, .register:hover{
   color: rgb(119, 117, 117);
@@ -111,18 +126,64 @@ input[type='file'] {
   background-color: #97cf6e;
   border-radius: 10px;
 }
+
+ /* inicio alteração/inclusão */
+@media (max-width: 1360px) {
+  input[type='file']{
+    padding-bottom: 18px;
+    padding-top: 18px;
+  }
+}
 @media (max-width: 600px) {
   .upload{
-    margin: 6% 0 0% 5%;
-    padding: 4%;
-    width: max-content;
+    margin: 6% 0;
+    width: 136%;
   }
   .register{
-  width: 25%;
+  width: 85%;
   }
   .buttonLogin img{
     width: 65%;
     margin-top: 15%;
   }
 
+  input[type='file']{
+    padding-inline: 2%;
+    width: 130%;
+    padding-bottom: 8px;
+    padding-top: 8px;
+    
+  }
+
+  .seePass, .seeConfPass {
+    top: 17%
+  }
+
+  .box{
+    margin-inline: 5%;
+    height: 94vh;
+  }
+
+  .nameUser, .emailUser, .passwordRegister, .confPass{
+    width: 80%;
+    margin: 0 auto;  
+  }
 }
+
+@media (max-width: 375px){
+  .seePass, .seeConfPass{
+    right: 14%;
+  }
+
+  #enter{
+    font-size: 80%;
+  }
+}
+
+@media (max-width: 320px ) {
+  .passwordRegister{
+    text-align: left;
+  }
+}
+
+/* fim alteração/inclusão */

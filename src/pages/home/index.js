@@ -29,15 +29,9 @@ export const home = () => {
     <div class="lines">
     <hr>
     </div>
-  
-  </header>
-  <main>
-    <div class="publish" id="timeline" data-post>
-    </div>
- 
-  </main>
-</div>
-`;
+    </main>
+  </div>
+  `;
 
   const btnLogout = rootElement.querySelector('#btnLogout');
   const btnGoPost = rootElement.querySelector('#goPost');
@@ -48,6 +42,14 @@ export const home = () => {
   });
 
   btnGoPost.addEventListener('click', () => route('/posts'));
+
+  // const btnRecipe = rootElement.querySelector('#receitas');
+  // console.log(btnRecipe);
+  // btnRecipe.addEventListener('click', () => {
+  //   const recipePosts = data().tipo === 'receita';
+  //   console.log(recipePosts);
+  //   return getPosts(recipePosts);
+  // });
   // carregar posts na tela
   getPosts().then((collectionContent) => {
     collectionContent.forEach((doc) => {
