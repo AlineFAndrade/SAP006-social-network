@@ -63,7 +63,7 @@ export const home = () => {
       const timeline = rootElement.querySelector('#timeline');
       div.innerHTML = `<div class="allPosts" data-id="${doc.id}">
       <div class="headPost">  
-        <img src=${doc.data().image} class='imgUser'> 
+        <img src=${doc.data().image === null ? 'http://pudim.com.br/pudim.jpg' : doc.data().image} class='imgUser'> 
       <div class="user-data"> 
         <p class="user"> ${doc.data().nome}</p>
         <p class="data">• ${doc.data().data.toDate().toLocaleDateString()} •</p>
