@@ -3,7 +3,14 @@ const storage = firebase.storage();
 
 export const addPost = (postar) => db.collection('posts').add(postar);
 
-export const getPosts = () => db.collection('posts').orderBy('data').limit(15).get();
+export const getPosts = (tipo) => {
+  if (tipo !== undefined) {
+    return db.collection('posts').where('tipo', '==', tipo).orderBy('data').limit(15)
+      .get();
+  }
+
+  return db.collection('posts').orderBy('data').limit(15).get();
+};
 
 export const deletePost = (postID) => {
   const postsCollection = firebase.firestore().collection('posts');
@@ -37,8 +44,14 @@ export const uploadImage = (folder, file) => {
   return ref.child(folder).child(imageName).put(file, metadata);
 };
 
-export const editPosts = (typeEdit, titleEdit, hashtagsEdited, priceEdited,
-  addTextEdited, postID) => {
+export const editPosts = (
+  typeEdit,
+  titleEdit,
+  hashtagsEdited,
+  priceEdited,
+  addTextEdited,
+  postID,
+) => {
   const post = firebase.firestore().collection('posts').doc(postID);
   post.update({
     tipo: typeEdit,
