@@ -23,7 +23,7 @@ const carregarConteudo = (rootElement, tipo) => {
       <div class="headPost">  
         <img src=${
   doc.data().image === null
-    ? 'http://pudim.com.br/pudim.jpg'
+    ? 'https://img.itdg.com.br/tdg/images/recipes/000/031/593/318825/318825_original.jpg'
     : doc.data().image
 } class='imgUser'> 
       <div class="user-data"> 
