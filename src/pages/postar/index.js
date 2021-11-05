@@ -10,7 +10,6 @@ export const postar = () => {
     <div class="containerPost">
     <header>
      <nav class="menu">
-      <button class="links"><img src="./img/lupa.svg">Busca</button>
       <button class="links"><img src="./img/perfil.svg">Perfil</button>
       <button class="links" id="btnHome"><img class="imgHome" src="./img/home.svg">Home</button>
      </nav>

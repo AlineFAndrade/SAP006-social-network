@@ -1,3 +1,4 @@
+/* eslint-disable no-plusplus */
 import { outLogin } from '../../services/firebaseAuth.js';
 import { route } from '../../routes/navigator.js';
 import {
@@ -8,6 +9,53 @@ import {
 } from '../../services/firebaseData.js';
 import { modal } from './modal.js';
 
+export const home = () => {
+  const rootElement = document.createElement('div');
+  rootElement.innerHTML = ` 
+  <nav class="menu">
+   <input class="links" id="feed-post-search" placeholder="Buscar"> <img class="lupa" src="./img/lupa.svg"></input>
+   <button class="links" id="goPost"><img src="./img/tomato.svg"> Postar</button>
+   <button class="links" id="btnLogout"> Sair</button>
+  </nav>
+  <div class="containerHome">
+  <header>
+  <img class="logoHome" src="./img/govegGreen.png">
+  <div class="lines">
+  <hr>
+  </div>
+    <div class="filters">
+    <button id="receitas" class="receitas"> Receitas</button>
+    <button id="restaurantes" class="restaurantes" type="submit"> Restaurantes</button>
+    <button id="mercados" class="mercados"> Mercados</button>
+    </div>
+    
+    <div class="lines">
+    <hr>
+    </div>
+    </main>
+  </div>
+  `;
+
+  const btnLogout = rootElement.querySelector('#btnLogout');
+  const btnGoPost = rootElement.querySelector('#goPost');
+  // botão sair para fazer logout
+  btnLogout.addEventListener('click', (event) => {
+    event.preventDefault();
+    outLogin();
+  });
+
+  btnGoPost.addEventListener('click', () => route('/posts'));
+
+  // const btnRecipe = rootElement.querySelector('#receitas');
+  // console.log(btnRecipe);
+  // btnRecipe.addEventListener('click', () => {
+  //   const recipePosts = data().tipo === 'receita';
+  //   console.log(recipePosts);
+  //   return getPosts(recipePosts);
+  // });
+  // carregar posts na tela
+  getPosts().then((collectionContent) => {
+=======
 /**
  * Filtra e imprime os posts no element.
  * @param {*} rootElement DOM Element que vai conter os posts.
@@ -17,6 +65,7 @@ const carregarConteudo = (rootElement, tipo) => {
   getPosts(tipo).then((collectionContent) => {
     const timeline = rootElement.querySelector('#timeline');
     timeline.innerHTML = '';
+
     collectionContent.forEach((doc) => {
       const div = document.createElement('div');
       div.innerHTML = `<div class="allPosts" data-id="${doc.id}">
@@ -75,6 +124,26 @@ const carregarConteudo = (rootElement, tipo) => {
         <hr> `;
       timeline.insertBefore(div, timeline.childNodes[0]);
     });
+
+    function filterPost() {
+      const filterValue = rootElement.querySelector('#feed-post-search').value.toUpperCase();
+      const printedPosts = rootElement.querySelector('#timeline');
+      const postsContents = printedPosts.getElementsByClassName('title');
+      const getPost = document.getElementsByClassName('allPosts');
+      for (let i = 0; i < postsContents.length; i++) {
+        const filteredPost = postsContents[i];
+        if (filteredPost.innerHTML.toUpperCase().indexOf(filterValue) > -1) {
+          postsContents[i].style.display = '';
+          getPost[i].style.display = '';
+        } else {
+          postsContents[i].style.display = 'none';
+          getPost[i].style.display = 'none';
+        }
+      }
+    }
+
+    const searchInput = rootElement.querySelector('#feed-post-search');
+    searchInput.addEventListener('keyup', filterPost);
 
     const dataPost = rootElement.querySelector('[data-post]');
     dataPost.addEventListener('click', (e) => {
